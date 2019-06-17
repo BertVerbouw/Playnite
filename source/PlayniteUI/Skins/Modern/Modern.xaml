@@ -1872,8 +1872,8 @@
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
-        <Setter Property="Margin" Value="5,0,5,0" />
-        <Setter Property="Padding" Value="3" />
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="Padding" Value="5,10" />
         <Setter Property="WindowChrome.IsHitTestVisibleInChrome" Value="True" />
         <Setter Property="Template">
             <Setter.Value>
@@ -1904,7 +1904,7 @@
 
     <Style x:Key="StandardWindowStyle" TargetType="pc:WindowBase">
         <Setter Property="Background" Value="{DynamicResource WindowBackgourndBrush}" />
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
         <Setter Property="TextOptions.TextFormattingMode" Value="Ideal" />
         <Setter Property="TextOptions.TextRenderingMode" Value="Auto" />
         <Setter Property="WindowChrome.WindowChrome">
@@ -1929,10 +1929,10 @@
                                     <DockPanel DockPanel.Dock="Top" LastChildFill="False">
                                         <TextBlock Text="{TemplateBinding Title}" DockPanel.Dock="Left" Margin="10,3,0,0" VerticalAlignment="Center"
                                                    Opacity="0.75" Style="{DynamicResource BaseTextBlockStyle}" x:Name="PART_TextTitle" />
-                                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="0,3,5,0">
+                                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="0">
                                             <Button Style="{DynamicResource WindowBarButton}" Content="0" x:Name="PART_ButtonMinimize"/>
                                             <Button Style="{DynamicResource WindowBarButton}" Content="1" x:Name="PART_ButtonMaximize" />
-                                            <Button Style="{DynamicResource WindowBarButton}" Content="r" x:Name="PART_ButtonClose"/>
+                                            <Button Style="{DynamicResource WindowBarButton}" Content="r" x:Name="PART_ButtonClose" Padding="5,10,10,10"/>
                                         </StackPanel>
                                     </DockPanel>
                                 </DockPanel>
@@ -1959,7 +1959,7 @@
 
     <Style x:Key="MainWindowStyle" TargetType="pc:WindowBase"
            BasedOn="{StaticResource ResourceKey=StandardWindowStyle}">
-        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderThickness" Value="0" />
     </Style>
 
     <Style TargetType="{x:Type pc:GameMenu}">
@@ -2525,7 +2525,7 @@
                 Style="{StaticResource ImageHighlightButton}" ToolTip="{DynamicResource LOCSteamFriendsTooltip}"
                 Visibility="{Binding AppSettings.ShowSteamFriendsButton, Converter={pui:BooleanToVisibilityConverter}}">
             <Button.OpacityMask>
-                <ImageBrush ImageSource="/Images/friends.png" RenderOptions.BitmapScalingMode="Fant"/>
+                <ImageBrush ImageSource="/Images/friends.png" RenderOptions.BitmapScalingMode="Fant" />
             </Button.OpacityMask>
         </Button>
     </ControlTemplate>
@@ -3293,11 +3293,11 @@
                     VerticalAlignment="Top" Background="#33000000" Height="38">
                 <DockPanel>
                     <Button DockPanel.Dock="Left" Command="{Binding OpenMainMenuCommand}"
-                            HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent">
+                            HorizontalContentAlignment="Left" BorderThickness="0" Background="Transparent" Padding="0">
                         <Border DockPanel.Dock="Left" Background="Transparent"
-                                Cursor="Hand" Margin="10,0,5,0" WindowChrome.IsHitTestVisibleInChrome="True">
+                                Cursor="Hand" WindowChrome.IsHitTestVisibleInChrome="True">
                             <TextBlock x:Name="HamburgerMenu"  Text="☰" VerticalAlignment="Center" FontWeight="Bold" Opacity="0.9"
-                                        FontSize="20">
+                                        FontSize="20" Padding="10,8,10,7" >
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock">
                                         <Setter Property= "Foreground" Value="{StaticResource TextBrush}" />
